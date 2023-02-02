@@ -94,7 +94,57 @@ app.get('/all',(req,res)=>{
        res.json(r);
       })
       
-})
+}) //get all data from the mongodb
+
+
+app.get("/find/name/:name",(req,res)=>{
+    const option= req.params.name;
+   
+    book_model.find({Name:option},(err,r)=>{
+        if(err) console.log(err)
+        res.json(r);
+    })
+})//for finding with name
+
+
+app.get("/find/tag/:tag",(req,res)=>{
+    const option= req.params.tag;
+   
+    book_model.find({tag:option},(err,r)=>{
+        if(err) console.log(err)
+        res.json(r);
+    })
+})//for finding with tag
+
+
+app.get("/find/author/:author",(req,res)=>{
+    const option= req.params.author;
+   
+    book_model.find({Author_name:option},(err,r)=>{
+        if(err) console.log(err)
+        res.json(r);
+    })
+})//for finding with author name
+
+
+app.get("/find/category/:category",(req,res)=>{
+    const option= req.params.category;
+   
+    book_model.find({Category:option},(err,r)=>{
+        if(err) console.log(err)
+        res.json(r);
+    })
+})//for finding with category
+
+
+app.get("/find/genre/:genre",(req,res)=>{
+    const option= req.params.genre;
+   
+    book_model.find({Genre:option},(err,r)=>{
+        if(err) console.log(err)
+        res.json(r);
+    })
+})//for finding with genre
 
 
 
